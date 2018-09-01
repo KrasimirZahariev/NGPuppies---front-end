@@ -81,9 +81,9 @@ $(document).ready(function() {
 
 
 
-    //VIEW ALL USERS
+    //FORM VIEW ALL USERS
     
-    $('#show-users').click(function showUsers(){
+    $('#show-users').click(function getUsers(){
 
         $.ajax({
             type: 'GET',
@@ -99,7 +99,50 @@ $(document).ready(function() {
     });
 
     function displayUsers(data) {
-        var username = null; 
+            $('body').append(
+                "<div class='container' id='editDeleteUser'>",
+                "   <div class='table-wrapper'>",
+                "        <div class='table-title'>",
+                "            <div class='row'>",
+                "                <div class='col-sm-8'><h2>User <b>Details</b></h2></div>",
+                "            </div>",
+                "        </div>",
+                "        <table class='table table-bordered'>",
+                "            <thead>",
+                "                <tr>",
+                "                    <th>User Id</th>",
+                "                    <th>Username</th>",
+                "                    <th>Password</th>",
+                "                    <th>EIK</th>",
+                "                    <th>Role</th>",
+                "                    <th>Actions</th>",
+                "                </tr>",
+                "            </thead>",
+                "            <tbody>",
+                                
+                "            </tbody>",
+                "        </table>",
+                "    </div>",
+                "</div>"
+            )
+
+        data.forEach(user => {
+            $('table').append(
+                "<tr>",
+                "   <td>" + user.userId + "</td>",
+                "    <td>" + user.username + "</td>",
+                "    <td>" + user.password + "</td>",
+                "    <td>" + user.eik + "</td>",
+                "    <td>" + user.authorities[0].role + "</td>",
+
+                "    <td>",
+                "        <a class='edit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a>",
+                "        <a class='add' title='Add' data-toggle='tooltip'><i class='material-icons'>&#xE03B;</i></a>",
+                "        <a class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>",
+                "    </td>",
+                "</tr>"
+            );    
+        });
     }
 
 });

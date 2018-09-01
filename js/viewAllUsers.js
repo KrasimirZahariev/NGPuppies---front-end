@@ -41,10 +41,13 @@ $(document).ready(function(){
 			$(this).parents("tr").find(".add, .edit").toggle();
 			$(".add-new").removeAttr("disabled");
 			//MAKE POST REQUEST TO UPDATE USER
-
+			
 			
 		}
-    });
+	});
+
+	
+	
 	// Edit row on edit button click
 	$(document).on("click", ".edit", function(){
 		console.log("edit clicked");		
@@ -54,7 +57,8 @@ $(document).ready(function(){
 		$(this).parents("tr").find(".add, .edit").toggle();
 		$(".add-new").attr("disabled", "disabled");
 		
-    });
+	});
+	
 	// Delete row on delete button click
 	$(document).on("click", ".delete", function(){
         $(this).parents("tr").remove();

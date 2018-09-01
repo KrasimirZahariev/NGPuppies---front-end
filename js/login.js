@@ -30,27 +30,4 @@ $(document).ready(function() {
         });
     });
     
-    $('#test-button').click(function (ev) {
-        ev.preventDefault();
-        
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:8080/client/bills/unpaid/',
-            headers: {
-                "Content-Type" : "application/json",
-                "Authorization" : localStorage.getItem("token")
-            }
-        }).done(function (header) {
-
-        }).fail(function (xhr, status, error) {
-            new Noty({
-                text: 'ERROR: There was an error with your login.',
-                layout: 'topCenter',
-                type: 'error',
-                theme: 'mint',
-                timeout: 3000
-            }).show();
-        });
-    });
-
 }); 
