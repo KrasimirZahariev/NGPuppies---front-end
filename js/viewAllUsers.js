@@ -40,8 +40,10 @@ $(document).ready(function(){
 			});			
 			$(this).parents("tr").find(".add, .edit").toggle();
 			$(".add-new").removeAttr("disabled");
+			//MAKE POST REQUEST TO UPDATE USER
+
+			
 		}
-		console.log(editedUser);	
     });
 	// Edit row on edit button click
 	$(document).on("click", ".edit", function(){
