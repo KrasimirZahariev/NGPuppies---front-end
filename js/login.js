@@ -1,11 +1,11 @@
 $(document).ready(function() {
     
-    let auth = null;
-    let role = null;
     $('#login-btn').click(function (ev) {
     ev.preventDefault();
-    let username = $('#usernameInput').val();
-    let password = $('#passInput').val();
+    var username = $('#usernameInput').val();
+    var password = $('#passInput').val();
+    var auth = null;
+    var role = null;
 
         $.ajax({
             type: 'POST',

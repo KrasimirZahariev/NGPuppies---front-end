@@ -93,10 +93,17 @@ $(document).ready(function() {
                 "Authorization" : localStorage.getItem("token")
             }
         }).done(function(data) {
-            console.log(data[0].username);
             displayUsers(data)
         });
     });
 
+
+    // LOGOUT FUNCTIONALITY
+
+    $('#logout').click(function (){
+        
+        localStorage.clear();
+        window.location.href = "/login.html";
+    });    
 
 });
