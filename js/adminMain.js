@@ -100,64 +100,24 @@ $(document).ready(function() {
 
     function displayUsers(data) {
 
-            var rows = [];
-            data.forEach(user => {
-                rows.push("<tr><td>"+user.userId+"</td><td>"+user.username+"</td><td>"+"*****"+"</td><td>"+user.eik+"</td><td>"+user.authorities[0].role+"</td><td><a class='edit'title='Edit'data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a><a class='add'title='Add'data-toggle='tooltip'><i class='material-icons'>&#xE03B;</i></a><a class='delete'title='Delete'data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a></td></tr>");
+        var rows = [];
+        data.forEach(user => {
+            rows.push("<tr><td>"+user.username+"</td><td>"+"******"+"</td><td>"+user.eik+
+            "</td><td>"+user.authorities[0].role+"</td><td><a class='edit'title='Edit'data-toggle='tooltip'>" + 
+            "<i class='material-icons'>&#xE254;</i></a><a class='add'title='Add'data-toggle='tooltip'>"+
+            "<i class='material-icons'>&#xE03B;</i></a><a class='delete'title='Delete'data-toggle='tooltip'>"+
+            "<i class='material-icons'>&#xE872;</i></a></td></tr>");
 
-            });
+        });
 
-            var result = rows.join('');
+        var result = rows.join('');
 
-            var str = "<div class='container'id='editDeleteUser'><div class='table-wrapper'><div class='table-title'><div class='row'><div class='col-sm-8'><h2>User<b>Details</b></h2></div></div></div><table class='table table-bordered'><thead><tr><th>UserId</th><th>Username</th><th>Password</th><th>EIK</th><th>Role</th><th>Actions</th></tr></thead><tbody>"+result+"</tbody></table></div></div>";
+        var form = "<div class='container'id='editDeleteUser'><div class='table-wrapper'><div class='table-title'>"+
+        "<div class='row'><div class='col-sm-8'><h2>User<b>Details</b></h2></div></div></div>"+
+        "<table class='table table-bordered'><thead><tr><th>Username</th>"+
+        "<th>Password</th><th>EIK</th><th>Role</th><th>Actions</th></tr></thead><tbody>"+result+"</tbody></table></div></div>";
 
-            $('body').append(str);
-            console.log(str);
-
-            // $('body').append(
-            //     "<div class='container' id='editDeleteUser'>",
-            //     "   <div class='table-wrapper'>",
-            //     "        <div class='table-title'>",
-            //     "            <div class='row'>",
-            //     "                <div class='col-sm-8'><h2>User <b>Details</b></h2></div>",
-            //     "            </div>",
-            //     "        </div>",
-            //     "        <table class='table table-bordered'>",
-            //     "            <thead>",
-            //     "                <tr>",
-            //     "                    <th>User Id</th>",
-            //     "                    <th>Username</th>",
-            //     "                    <th>Password</th>",
-            //     "                    <th>EIK</th>",
-            //     "                    <th>Role</th>",
-            //     "                    <th>Actions</th>",
-            //     "                </tr>",
-            //     "            </thead>",
-            //     "            <tbody>",
-                                
-            //     "            </tbody>",
-            //     "        </table>",
-            //     "    </div>",
-            //     "</div>"
-            // )
-
-        // data.forEach(user => {
-        //     $('tbody').append(
-        //         "<tr>",
-        //         "   <td>" + user.userId + "</td>",
-        //         "    <td>" + user.username + "</td>",
-        //         "    <td>" + user.password + "</td>",
-        //         "    <td>" + user.eik + "</td>",
-        //         "    <td>" + user.authorities[0].role + "</td>",
-
-        //         "    <td>",
-        //         "        <a class='edit' title='Edit' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a>",
-        //         "        <a class='add' title='Add' data-toggle='tooltip'><i class='material-icons'>&#xE03B;</i></a>",
-        //         "        <a class='delete' title='Delete' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a>",
-        //         "    </td>",
-        //         "</tr>"
-        //     );    
-        // });
-        
+        $('body').append(form);       
     }
 
 });

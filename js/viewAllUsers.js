@@ -14,7 +14,8 @@ $(document).ready(function(){
     	$("table").append(row);		
 		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
         $('[data-toggle="tooltip"]').tooltip();
-    });
+	});
+	
 	// Add row on add button click
 	$(document).on("click", ".add", function(){
 		console.log("ADD CLICKED");
@@ -27,7 +28,6 @@ $(document).ready(function(){
 				empty = true;
 			} else{
 				//THE EDDITED VALUES!!!!
-				console.log($(this).val());
 				editedUser.push($(this).val());
                 $(this).removeClass("error");
             }
@@ -41,12 +41,41 @@ $(document).ready(function(){
 			$(this).parents("tr").find(".add, .edit").toggle();
 			$(".add-new").removeAttr("disabled");
 			//MAKE POST REQUEST TO UPDATE USER
-			
-			
+			updateUser(editedUser);
 		}
 	});
 
-	
+	function updateUser(editedUser) {
+		
+		var pass = editedUser[1];
+
+		if(editedUser[1] === "******") {
+			pass = null;
+		}
+
+		var User = {
+            "username" : editedUser[0],
+            "password" : pass,
+            "eik" : editedUser[2], 
+            "authorities" : [{
+                "role" : editedUser[3]
+            }]
+        }
+
+		$.ajax({
+			type: 'PUT',
+			url: 'http://localhost:8080/admin/users/update/',
+			headers: {
+				"Content-Type" : "application/json",
+				"Authorization" : localStorage.getItem("token")
+			},
+			data: JSON.stringify(User)
+		}).done(function () {
+			alert("user updated !");
+		});
+
+	}
+
 	
 	// Edit row on edit button click
 	$(document).on("click", ".edit", function(){
