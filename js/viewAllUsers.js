@@ -1,4 +1,4 @@
-function displayUsers(data) {
+function displayUsersForm(data) {
 
 	var rows = [];
 	data.forEach(user => {
