@@ -5,9 +5,12 @@ $(document).ready(function() {
         createAdminForm();
     });
 
+    
     //CREATE NEW CLIENT
         //THE SAME
-
+    $('#show-create-user-form').click(function() {
+        createUserForm();
+    });
 
 
     //FORM VIEW ALL USERS
