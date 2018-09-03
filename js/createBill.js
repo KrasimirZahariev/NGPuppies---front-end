@@ -47,32 +47,29 @@ function displayCreateBillForm(subscribers, services, currencies) {
 $(document).ready(function() {
     
     $('body').on('click', '#createBill', function(){
-        var phone = $('#SubscriberSelect').vall();
-        // var bill = {
-        //     "phoneNumber" : $('#SubscriberSelect').vall(),
-        //     "service" : $('#ServiceSelect').vall(),
-        //     "startDate" : $('#StartDate').vall(),
-        //     "endDate" : $('#EndDate').vall(),
-        //     "currency" : $('#CurrencySelect').vall(),
-        //     "amount" : $('#Amount').vall()
-        // }
 
-        console.log(phone);
+        var bill = {
+            "phoneNumber" : $('#SubscriberSelect option:selected').text(),
+            "service" : $('#ServiceSelect option:selected').text(),
+            "startDate" : $('#StartDate').val(),
+            "endDate" : $('#EndDate').val(),
+            "currency" : $('#CurrencySelect option:selected').text(),
+            "amount" : $('#Amount').val()
+        }
+
+        console.log(bill);
         
-        // var date = "09/04/2018";
-
-
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'http://localhost:8080/bills/create/',
-        //     headers: {
-        //         "Content-Type" : "application/json",
-        //         "Authorization" : localStorage.getItem("token")
-        //     },
-        //     data: JSON.stringify(bill)
-        // }).done(function () {
-        //     alert("Bill created !");
-        // });
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/admin/bills/create/',
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization" : localStorage.getItem("token")
+            },
+            data: JSON.stringify(bill)
+        }).done(function () {
+            alert("Bill created !");
+        });
 
     });
 });
