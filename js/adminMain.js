@@ -30,6 +30,72 @@ $(document).ready(function() {
         });
     });
 
+    //FORM CREATE BILL
+
+    $('#show-create-bill-form').click(function () {
+
+        var subscribers = [];
+        var services = [];
+        var currencies = [];
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/admin/subscribers/',
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization" : localStorage.getItem("token")
+            }
+        }).done(function(subscribersData) {
+            subscribers = subscribersData;
+
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8080/admin/services/',
+                headers: {
+                    "Content-Type" : "application/json",
+                    "Authorization" : localStorage.getItem("token")
+                }
+            }).done(function(servicesData) {
+                services = servicesData;
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:8080/admin/currencies/',
+                    headers: {
+                        "Content-Type" : "application/json",
+                        "Authorization" : localStorage.getItem("token")
+                    }
+                }).done(function(currenciesData) {
+                    currencies = currenciesData;
+
+                    displayCreateBillForm(subscribers, services, currencies);  
+                });  
+
+            });
+      
+        });
+        
+    
+
+        
+
+        
+
+        // $.ajax({
+        //     type: 'POST',
+        //     url: 'http://localhost:8080/bills/create/',
+        //     headers: {
+        //         "Content-Type" : "application/json",
+        //         "Authorization" : localStorage.getItem("token")
+        //     },
+        //     body: {
+        //         //bill
+        //     }
+        // }).done(function (header) {
+        //     //load results
+        // });
+    });
+    
 
     // LOGOUT FUNCTIONALITY
 
