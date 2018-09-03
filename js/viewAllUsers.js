@@ -17,7 +17,8 @@ function displayUsersForm(data) {
 	"<table class='table table-bordered'><thead><tr><th>Username</th>"+
 	"<th>Password</th><th>EIK</th><th>Role</th><th>Actions</th></tr></thead><tbody>"+result+"</tbody></table></div></div>";
 
-	$('body').append(form);       
+	
+	$('main').html(form);       
 }
 
 $(document).ready(function(){

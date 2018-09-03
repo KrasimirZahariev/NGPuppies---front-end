@@ -23,7 +23,7 @@ function displayCreateBillForm(subscribers, services, currencies) {
     var currenciesFragment = generatedCurrencies.join('');
 
 
-    var form = "<div class='col col-form-label'><div class='container'><div class='card'>"+
+    var form = "<div class='col col-form-label' id='billForm'><div class='container'><div class='card'>"+
     "<div class='card-header'><h3&class='mb-0'>CreatenewBill</h3></div><div class='card-body'>"+
     "<div class='form-group'><label for='exampleFormControlSelect1'class='col col-form-label'>"+
     "Subscriber</label><select class='form-control'id='SubscriberSelect'>"+subscribersFragment+"</select>"+
@@ -41,7 +41,7 @@ function displayCreateBillForm(subscribers, services, currencies) {
     "<input type='reset'class='btn btn-secondary'value='Cancel'><input type='button'class='btn btn-primary' id='createBill' value='Create'>"+
     "</div></div></form></div></div></div></div></div>";
 
-    $('body').append(form);
+    $('main').html(form);
 }
 
 $(document).ready(function() {
@@ -68,6 +68,9 @@ $(document).ready(function() {
             },
             data: JSON.stringify(bill)
         }).done(function () {
+            $('#StartDate').val(""),
+            $('#EndDate').val(""),
+            $('#Amount').val("")
             alert("Bill created !");
         });
 
