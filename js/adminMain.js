@@ -25,6 +25,7 @@ $(document).ready(function() {
                 "Authorization" : localStorage.getItem("token")
             }
         }).done(function(data) {
+            console.log(data)
             displayUsersForm(data)
         });
     });

@@ -71,19 +71,13 @@ $(document).ready(function(){
 		
 		var pass = editedUser[1];
 
-		if(editedUser[1] === "******") {
-			pass = null;
-		}
-
 		var User = {
             "username" : editedUser[0],
             "password" : pass,
             "eik" : editedUser[2], 
-            "authorities" : [{
-                "role" : editedUser[3]
-            }]
+			"role" : editedUser[3]
         }
-
+		console.log("Updated user - " + User);
 		$.ajax({
 			type: 'PUT',
 			url: 'http://localhost:8080/admin/users/update/',
@@ -112,8 +106,13 @@ $(document).ready(function(){
 	
 	// Delete row on delete button click
 	$(document).on("click", ".delete", function(){
-        $(this).parents("tr").remove();
+		console.log("delete clicked");
+		$(this).parents("tr").remove();
 		$(".add-new").removeAttr("disabled");
+		//deleteUser();
+		//MAKE THE FUNCTION IN THE BACK END!
 	});
+
+
 	
 });

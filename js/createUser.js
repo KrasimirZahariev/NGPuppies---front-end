@@ -53,9 +53,7 @@ $(document).ready(function(){
             "username" : user,
             "password" : pass,
             "eik" : eik, 
-            "authorities" : [{
-                "role" : "ROLE_USER"
-            }]
+            "role" : "ROLE_USER"
         }
 
         $.ajax({

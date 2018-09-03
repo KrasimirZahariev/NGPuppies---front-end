@@ -53,11 +53,9 @@ $(document).ready(function(){
             "username" : user,
             "password" : pass,
             "eik" : eik, 
-            "authorities" : [{
-                "role" : "ROLE_ADMIN"
-            }]
+            "role" : "ROLE_ADMIN"
         }
-
+        console.log(User)
         $.ajax({
             type: 'POST',
             url: 'http://localhost:8080/admin/users/create/',
