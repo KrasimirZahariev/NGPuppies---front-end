@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/paymentsHistory.js"></script>
+    <title>Payments History</title>
+</head>
+
+<body>
+
+
+
+    <div id="viewAllSubscribers"></div>
+
+    <div class="container" id="payBills">
+        <br><br>
+        <h1>Payment History</h1>
+        <br>
+        <input id="myInput" type="text" placeholder="Search..">
+        <br><br>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordred table-striped">
+                        <thead>
+                            <th>Phone Number</th>
+                            <th>Service</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Payment Date</th>
+                        </thead>
+                        <tbody id="myTable">
+                            <tr>
+                                <td>0886524342</td>
+                                <td>TV</td>
+                                <td>11/09/2018</td>
+                                <td>11/10/2018</td>
+                                <td>BGN</td>
+                                <td>1000.00</td>
+                                <td>15/10/2018</td>
+                            </tr>
+                            <tr>
+                                <td>0886230032</td>
+                                <td>Internet</td>
+                                <td>11/08/2018</td>
+                                <td>11/09/2018</td>
+                                <td>BGN</td>
+                                <td>100.00</td>
+                                <td>15/09/2018</td>
+                            </tr>
+                            <tr>
+                                <td>0884004342</td>
+                                <td>Telephone</td>
+                                <td>11/07/2018</td>
+                                <td>11/08/2018</td>
+                                <td>BGN</td>
+                                <td>1000.00</td>
+                                <td>15/08/2018</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
