@@ -13,7 +13,7 @@ function displayUsersForm(data) {
 	var result = rows.join('');
 
 	var form = "<div class='container'id='editDeleteUser'><div class='table-wrapper'><div class='table-title'>"+
-	"<div class='row'><div class='col-sm-8'><h2>User<b>Details</b></h2></div></div></div>"+
+	"<div class='row'><div class='col-sm-8'><h2>User <b>Details</b></h2></div></div></div>"+
 	"<table class='table table-bordered'><thead><tr><th>Username</th>"+
 	"<th>Password</th><th>EIK</th><th>Role</th><th>Actions</th></tr></thead><tbody>"+result+"</tbody></table></div></div>";
 

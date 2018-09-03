@@ -22,10 +22,10 @@ $(document).ready(function() {
             localStorage.setItem("token", auth);
             role = body["Role"];
             if(role === "ROLE_USER") {
-                window.location.href = "/clientsNavBar.html";
+                window.location.href = "/user.html";
                 test();
             } else {
-                window.location.href = "/adminsNavBar.html";
+                window.location.href = "/admin.html";
             }
         });
     });

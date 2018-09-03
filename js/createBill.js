@@ -24,7 +24,7 @@ function displayCreateBillForm(subscribers, services, currencies) {
 
 
     var form = "<div class='col col-form-label' id='billForm'><div class='container'><div class='card'>"+
-    "<div class='card-header'><h3&class='mb-0'>CreatenewBill</h3></div><div class='card-body'>"+
+    "<div class='card-header'><h3&class='mb-0'>CREATE NEW BILL</h3></div><div class='card-body'>"+
     "<div class='form-group'><label for='exampleFormControlSelect1'class='col col-form-label'>"+
     "Subscriber</label><select class='form-control'id='SubscriberSelect'>"+subscribersFragment+"</select>"+
     "</div><div class='form-group'><label for='exampleFormControlSelect1'class='col col-form-label'>"+
