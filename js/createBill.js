@@ -38,8 +38,41 @@ function displayCreateBillForm(subscribers, services, currencies) {
     "<label for='example-number-input'class='col col-form-label'>Amount</label><div class='form'>"+
     "</div><input class='form-control'type='number'value='0'min='0'step='0.01'data-number-to-fixed='2'data-number-stepfactor='100'id='Amount'>"+
     "</div></div><div class='form-group'><label class='col col-form-label'></label><div class='col-lg-9'>"+
-    "<input type='reset'class='btn btn-secondary'value='Cancel'><input type='button'class='btn btn-primary'value='Create'>"+
+    "<input type='reset'class='btn btn-secondary'value='Cancel'><input type='button'class='btn btn-primary' id='createBill' value='Create'>"+
     "</div></div></form></div></div></div></div></div>";
 
     $('body').append(form);
 }
+
+$(document).ready(function() {
+    
+    $('body').on('click', '#createBill', function(){
+        var phone = $('#SubscriberSelect').vall();
+        // var bill = {
+        //     "phoneNumber" : $('#SubscriberSelect').vall(),
+        //     "service" : $('#ServiceSelect').vall(),
+        //     "startDate" : $('#StartDate').vall(),
+        //     "endDate" : $('#EndDate').vall(),
+        //     "currency" : $('#CurrencySelect').vall(),
+        //     "amount" : $('#Amount').vall()
+        // }
+
+        console.log(phone);
+        
+        // var date = "09/04/2018";
+
+
+        // $.ajax({
+        //     type: 'POST',
+        //     url: 'http://localhost:8080/bills/create/',
+        //     headers: {
+        //         "Content-Type" : "application/json",
+        //         "Authorization" : localStorage.getItem("token")
+        //     },
+        //     data: JSON.stringify(bill)
+        // }).done(function () {
+        //     alert("Bill created !");
+        // });
+
+    });
+});

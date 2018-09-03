@@ -68,7 +68,7 @@ $(document).ready(function() {
                 }).done(function(currenciesData) {
                     currencies = currenciesData;
 
-                    displayCreateBillForm(subscribers, services, currencies);  
+                    displayCreateBillForm(subscribers, services, currencies);
                 });  
 
             });
@@ -78,22 +78,6 @@ $(document).ready(function() {
     
 
         
-
-        
-
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'http://localhost:8080/bills/create/',
-        //     headers: {
-        //         "Content-Type" : "application/json",
-        //         "Authorization" : localStorage.getItem("token")
-        //     },
-        //     body: {
-        //         //bill
-        //     }
-        // }).done(function (header) {
-        //     //load results
-        // });
     });
     
 
