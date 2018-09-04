@@ -62,5 +62,21 @@ $( document ).ready(function() {
 
     });
 
+    //MAX AND AVERAGE PAYMENTS IN A GIVEN TIME PERIOD
+    $('#show-max-average-payments').click(function(){
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/client/subscribers/',
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization" : localStorage.getItem("token")
+            }
+        }).done(function(subscribers) {
+            generateMaxAndAverageForSubscriberForm(subscribers);
+        });
+
+    });
+
 });
 

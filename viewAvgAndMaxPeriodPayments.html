@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <script src="js/viewAvgAndMaxPaymentsPeriod.js"></script>
+    <!-- <script src="js/viewAvgAndMaxPaymentsPeriod.js"></script> -->
     <title>View Avg and Max Payments for Period</title>
 </head>
 
@@ -23,13 +23,27 @@
     <div id="ViewAvgAndMaxPeriodPayments">
         <div class="container" id="payBills">
             <br><br>
+
+                <!-- <label for="exampleFormControlSelect1" class="col col-form-label">Subscriber</label> -->
+                <select id="SubscriberSelect">
+                    <option>0886435354</option>
+                    <option>3489384983</option>
+                    <option>3923293928</option>
+                    <option>4823647263</option>
+                    <option>5238738738</option>
+                </select>
+            <br>
             <div class="setPeriod">
                 <br>
-                <div>Start Date:  </div>
-                <input id="datepicker" width="25%" />
+                <label for="example-date-input" class="col col-form-label">Start Date</label>
+                        <div class="form">
+                            <input class="form-control" type="date" placeholder="Start Date" id="StartDate">
+                        </div>
                 <br>
-                <div>  End Date:  </div>
-                <input id="datepicker2" width="25%" />
+                <label for="example-date-input" class="col col-form-label">End Date</label>
+                        <div class="form">
+                            <input class="form-control" type="date" placeholder="End Date" id="EndDate">
+                        </div>
                 <br>
                 <button id="submitBut" type="submit" class="button">  Submit</button>
                 <br>
