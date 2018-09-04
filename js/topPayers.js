@@ -1,28 +1,26 @@
-function generateRecentPaymentsForm(recentPayments) {
+function generateTopPayersForm(topPayers) {
 
-  var generatedRecentPayments = [];
+  var generatedTopPayers = [];
 
-    recentPayments.forEach(payment => {
-        generatedRecentPayments.push(
+    topPayers.forEach(payer => {
+        generatedTopPayers.push(
             "<tr>"+
-                "<td>"+payment.phoneNumber+"</td>"+
-                "<td>"+payment.firstName+"</td>"+
-                "<td>"+payment.lastName+"</td>"+
-                "<td>"+payment.service+"</td>"+
-                "<td>"+(payment.amount)+"</td>"+
-                "<td>"+payment.currency+"</td>"+
-                "<td>"+payment.paymentDate+"</td>"+
+                "<td>"+payer.phoneNumber+"</td>"+
+                "<td>"+payer.firstName+"</td>"+
+                "<td>"+payer.lastName+"</td>"+
+                "<td>"+(payer.summ)+"</td>"+
+                "<td>"+payer.currency+"</td>"+
             " </tr>"
         );  
     });
 
-  var recentPaymentsFragment = generatedRecentPayments.join("");
+  var topPayersFragment = generatedTopPayers.join("");
 
   $('main').html(
-    '<div id="viewAllSubscribers">'+
-    '    <div class="container" id="payBills">'+
+    '<div>'+
+    '    <div class="container">'+
     '        <br><br>'+
-    '        <h1>Recent Payments</h1>'+
+    '        <h1>Top 10 Payers</h1>'+
     '        <br>'+
     '        <input id="myInput" type="text" placeholder="Search..">'+
     '        <br><br>'+
@@ -34,12 +32,10 @@ function generateRecentPaymentsForm(recentPayments) {
     '                            <th>Phone Number</th>'+
     '                            <th>First Name</th>'+
     '                            <th>Last Name</th>'+
-    '                            <th>Service</th>'+
-    '                            <th>Amount</th>'+
+    '                            <th>Total paid</th>'+
     '                            <th>Currency</th>'+
-    '                            <th>Payment Date</th>'+
     '                        </thead>'+
-    '                        <tbody id="myTable">' + recentPaymentsFragment + '</tbody>'+
+    '                        <tbody id="myTable">' + topPayersFragment + '</tbody>'+
     '                    </table>'+
     '                </div>'+
     '            </div>'+

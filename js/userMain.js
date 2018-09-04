@@ -17,7 +17,7 @@ $( document ).ready(function() {
     });
 
 
-    //RECENT PAYMNETS
+    //TOP 10 RECENT PAYMNETS
     $('#show-recent-payments').click(function(){
         $.ajax({
             type: 'GET',
@@ -27,11 +27,40 @@ $( document ).ready(function() {
                 "Authorization" : localStorage.getItem("token")
             }
         }).done(function(recentPayments) {
-            generateRecentPaymentsForm(recentPayments);
+            generatePaymentsForm(recentPayments, "10 Most Recent Payments");
         });
 
     });   
     
+    //PAYMENTS HISTORY DESCENDING
+    $('#show-payments-history-descending').click(function(){
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/client/bills/payments-descending/',
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization" : localStorage.getItem("token")
+            }
+        }).done(function(paymentsHistoryDescending) {
+            generatePaymentsForm(paymentsHistoryDescending, "Payment History");
+        });
+
+    });
+
+    //TOP 10 BIGGEST PAYERS
+    $('#show-top-payers').click(function(){
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/client/bills/top-payments/',
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization" : localStorage.getItem("token")
+            }
+        }).done(function(topPayers) {
+            generateTopPayersForm(topPayers);
+        });
+
+    });
 
 });
 
