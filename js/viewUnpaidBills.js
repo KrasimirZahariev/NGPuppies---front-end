@@ -23,6 +23,9 @@ function generateUnpaidBillsForm(unpaidBills) {
 
     $('main').html(
        " <div class='container' id='payBills'>"+
+       "    <br><br></br>"+
+       "    <h1>Unpaid Bills</h1>"+
+       "    <br>"+
        "     <div class='row'>"+
        "         <div class='col-md-12'>"+
        "             <div class='table-responsive'>"+
