@@ -75,16 +75,12 @@ $(document).ready(function() {
       
         });
         
-    
-
-        
     });
     
 
     // LOGOUT FUNCTIONALITY
 
     $('#logout').click(function (){
-        
         localStorage.clear();
         window.location.href = "/login.html";
     });    

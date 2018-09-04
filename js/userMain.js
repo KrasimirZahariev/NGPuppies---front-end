@@ -78,5 +78,29 @@ $( document ).ready(function() {
 
     });
 
+
+    //SUBSCRIBER DETAILS
+    $('#show-subscribers-details').click(function(){
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/client/subscribers/',
+            headers: {
+                "Content-Type" : "application/json",
+                "Authorization" : localStorage.getItem("token")
+            }
+        }).done(function(subscribers) {
+            generateSubscribersForm(subscribers);
+        });
+
+    });
+
+
+    // LOGOUT FUNCTIONALITY
+    $('#logout').click(function (){
+        localStorage.clear();
+        window.location.href = "/login.html";
+    });
+
 });
 
