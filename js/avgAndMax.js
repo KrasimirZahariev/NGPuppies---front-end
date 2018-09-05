@@ -52,7 +52,6 @@ function generateMaxAndAverageForSubscriberForm(subscribers) {
 }
 
 function generateSubscriberInfoForm(subscriberInfo, subscribersFragment) {
-
   $('main').html(
     '<div>'+
     '  <div class="container">'+
@@ -70,6 +69,8 @@ function generateSubscriberInfoForm(subscriberInfo, subscribersFragment) {
     '              <input class="form-control" type="date" placeholder="End Date" id="endDate">'+
     '          </div>'+
     '          <br>'+
+    '          <button id="submit-btn" type="submit" class="button">Submit</button>'+
+    '          <br>'+
     '      </div>'+
     '      <br><br><br>'+
     '      <div class="row">'+
@@ -86,12 +87,12 @@ function generateSubscriberInfoForm(subscriberInfo, subscribersFragment) {
     '                      </thead>'+
     '                      <tbody id="myTable">'+
     '                          <tr>'+
-    '                            <td>'+subscriberInfo.phoneNumber+'</td>'+
-    '                            <td>'+subscriberInfo.firstName+'</td>'+
-    '                            <td>'+subscriberInfo.lastName+'</td>'+
-    '                            <td>'+subscriberInfo.avg+'</td>'+
-    '                            <td>'+subscriberInfo.max+'</td>'+
-    '                            <td>'+subscriberInfo.currency+'</td>'+
+    '                            <td>'+subscriberInfo[0].phoneNumber+'</td>'+
+    '                            <td>'+subscriberInfo[0].firstName+'</td>'+
+    '                            <td>'+subscriberInfo[0].lastName+'</td>'+
+    '                            <td>'+(subscriberInfo[0].avg)+'</td>'+
+    '                            <td>'+subscriberInfo[0].max+'</td>'+
+    '                            <td>'+subscriberInfo[0].currency+'</td>'+
     '                          </tr>'+
     '                      </tbody>'+
     '                  </table>'+
