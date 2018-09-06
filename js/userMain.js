@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
     //UNPAID BILLS
-
     $('#show-unpaid-bills').click(function(){
         $.ajax({
             type: 'GET',
@@ -15,7 +14,6 @@ $( document ).ready(function() {
         });
 
     });
-
 
     //TOP 10 RECENT PAYMNETS
     $('#show-recent-payments').click(function(){

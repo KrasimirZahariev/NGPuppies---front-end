@@ -91,9 +91,23 @@ $(document).ready(function(){
 				"Authorization" : localStorage.getItem("token")
 			},
 			data: JSON.stringify(User)
-		}).done(function () {
-			alert("user updated !");
-		});
+		}).done(function() {
+            new Noty({
+                text: "User successfully updaited !",
+                layout: 'topCenter',
+                type: 'success',
+                theme: 'nest',
+                timeout: 3000
+            }).show();
+        }).fail(function (xhr) {
+            new Noty({
+                text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
+                layout: 'topCenter',
+                type: 'error',
+                theme: 'nest',
+                timeout: 3000
+            }).show();   
+        });
 
 	}
 
@@ -110,11 +124,37 @@ $(document).ready(function(){
 	
 	// Delete row on delete button click
 	$(document).on("click", ".delete", function(){
-		console.log("delete clicked");
+
 		$(this).parents("tr").remove();
+
+		var userId = $(this).closest('tr').find('td:eq(0)').text();
+
+		$.ajax({
+			type: 'DELETE',
+			url: 'http://localhost:8080/admin/users/delete/' + userId + '/',
+			headers: {
+				"Content-Type" : "application/json",
+				"Authorization" : localStorage.getItem("token")
+			},
+		}).done(function() {
+            new Noty({
+                text: "User successfully deleted !",
+                layout: 'topCenter',
+                type: 'success',
+                theme: 'nest',
+                timeout: 3000
+            }).show();
+        }).fail(function (xhr) {
+            new Noty({
+                text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
+                layout: 'topCenter',
+                type: 'error',
+                theme: 'nest',
+                timeout: 3000
+            }).show();   
+		});
+		
 		$(".add-new").removeAttr("disabled");
-		//deleteUser();
-		//MAKE THE FUNCTION IN THE BACK END!
 	});
 
 

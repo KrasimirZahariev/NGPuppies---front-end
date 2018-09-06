@@ -45,7 +45,15 @@ function generateMaxAndAverageForSubscriberForm(subscribers) {
       }
     }).done(function(subscriberInfo) {
         generateSubscriberInfoForm(subscriberInfo, subscribersFragment);
-    });
+    }).fail(function (xhr) {
+      new Noty({
+          text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
+          layout: 'topCenter',
+          type: 'error',
+          theme: 'nest',
+          timeout: 3000
+      }).show();
+    });  
 
   });
 

@@ -86,7 +86,21 @@ function generateUnpaidBillsForm(unpaidBills) {
             },
             data: JSON.stringify(billsIds)
         }).done(function() {
-            alert("Bills paid !");   
+            new Noty({
+                text: "Bills successfully paid !",
+                layout: 'topCenter',
+                type: 'success',
+                theme: 'nest',
+                timeout: 3000
+            }).show();
+        }).fail(function (xhr) {
+            new Noty({
+                text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
+                layout: 'topCenter',
+                type: 'error',
+                theme: 'nest',
+                timeout: 3000
+            }).show();   
         });
     });
         

@@ -68,10 +68,26 @@ $(document).ready(function() {
             },
             data: JSON.stringify(bill)
         }).done(function () {
-            $('#StartDate').val(""),
-            $('#EndDate').val(""),
-            $('#Amount').val("")
-            alert("Bill created !");
+            new Noty({
+                text: "Bill successfully created !",
+                layout: 'topCenter',
+                type: 'success',
+                theme: 'nest',
+                timeout: 3000
+            }).show();
+
+            $('#StartDate').val("");
+            $('#EndDate').val("");
+            $('#Amount').val("");
+
+        }).fail(function (xhr) {
+            new Noty({
+                text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
+                layout: 'topCenter',
+                type: 'error',
+                theme: 'nest',
+                timeout: 3000
+            }).show();   
         });
 
     });

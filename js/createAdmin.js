@@ -65,11 +65,26 @@ $(document).ready(function(){
             },
             data: JSON.stringify(User)
         }).done(function () {
+            new Noty({
+                text: "Admin successfully created !",
+                layout: 'topCenter',
+                type: 'success',
+                theme: 'nest',
+                timeout: 3000
+            }).show();
+
             $('#usernameInput').val("");
             $('#passInput').val("");
             $('#eikInput').val("");
-            console.log("admin created!");
-            alert("Admin created !");
+
+        }).fail(function (xhr) {
+            new Noty({
+                text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
+                layout: 'topCenter',
+                type: 'error',
+                theme: 'nest',
+                timeout: 3000
+            }).show();   
         });
     });
 });
