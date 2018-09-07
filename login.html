@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/icons/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/icon-font.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="/css/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/animsition.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/util.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <!-- <script src="/js/bootstrap.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/login.js"></script>
-</head>
-<body>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/fonts/icon-font.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="/css/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
 
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100 p-t-50 p-b-90">
-            <form class="login100-form validate-form flex-sb flex-w">
-				<span class="login100-form-title p-b-51">Login</span>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/noty@3.2.0-beta/lib/noty.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/changePassword.js"></script>
+    </head>
 
-                <div class="wrap-input100 validate-input m-b-16">
-                    <input class="input100" type="text" placeholder="Username" id="usernameInput">
-                    <span class="focus-input100"></span>
+    <body>
+        <main>
+            <div class="limiter">
+                <div class="container-login100">
+                    <div class="wrap-login100 p-t-50 p-b-90">
+                        <form class="login100-form validate-form flex-sb flex-w">
+                            <span class="login100-form-title p-b-51">Login</span>
+
+                            <div class="wrap-input100 validate-input m-b-16">
+                                <input class="input100" type="text" placeholder="Username" id="usernameInput">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input m-b-16">
+                                <input class="input100" type="password" placeholder="Password" id="passInput">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="container-login100-form-btn m-t-17">
+                                <button class="login100-form-btn" id="login-btn">Login</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-16">
-                    <input class="input100" type="password" placeholder="Password" id="passInput">
-                    <span class="focus-input100"></span>
-                </div>
-
-                <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn" id="login-btn">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div billId="dropDownSelect1"></div>
-
-</body>
+            </div>
+        </main>
+    </body>
 </html>

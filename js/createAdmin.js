@@ -53,7 +53,7 @@ $(document).ready(function(){
             "username" : user,
             "password" : pass,
             "eik" : eik, 
-            "role" : "ROLE_ADMIN"
+            "role" : "ROLE_CHANGE"
         }
         console.log(User)
         $.ajax({
@@ -82,7 +82,7 @@ $(document).ready(function(){
                 text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
                 layout: 'topCenter',
                 type: 'error',
-                theme: 'nest',
+                theme: 'metroui',
                 timeout: 3000
             }).show();   
         });

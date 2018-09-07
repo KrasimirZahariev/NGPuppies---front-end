@@ -50,7 +50,7 @@ function generateMaxAndAverageForSubscriberForm(subscribers) {
           text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
           layout: 'topCenter',
           type: 'error',
-          theme: 'nest',
+          theme: 'metroui',
           timeout: 3000
       }).show();
     });  
