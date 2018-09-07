@@ -114,7 +114,7 @@ $(document).ready(function(){
 	
 	// Edit row on edit button click
 	$(document).on("click", ".edit", function(){
-        $(this).parents("tr").find("td:not(:first-child, :last-child)").each(function(){
+        $(this).parents("tr").find("td:not(:first-child, :last-child, td:eq(2))").each(function(){
 			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
 		});		
 		$(this).parents("tr").find(".add, .edit").toggle();
@@ -149,7 +149,7 @@ $(document).ready(function(){
                 text: 'ERROR [' + xhr['status'] + ']: ' + xhr['responseText'],
                 layout: 'topCenter',
                 type: 'error',
-                theme: 'metroui',
+                theme: 'metroui	',
                 timeout: 3000
             }).show();   
 		});
