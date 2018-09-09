@@ -45,9 +45,11 @@ $(document).ready(function(){
 		var empty = false;
 		var input = $(this).parents("tr").find('input[type="text"]');
 		var userId = $(this).closest('tr').find('td:eq(0)').text();
+		var eik = $(this).closest('tr').find('td:eq(3)').text();
 		var editedUser = [];
 		
-		editedUser.push(userId);		
+		editedUser.push(userId);
+		editedUser.push(eik);		
 
         input.each(function(){
 			if(!$(this).val()){
@@ -74,15 +76,16 @@ $(document).ready(function(){
 
 	function updateUser(editedUser) {
 		
-		var pass = editedUser[2];
+		var pass = editedUser[3];
 
 		var User = {
 			"userId" : editedUser[0],
-            "username" : editedUser[1],
+            "username" : editedUser[2],
             "password" : pass,
-            "eik" : editedUser[3], 
+            "eik" : editedUser[1], 
 			"role" : editedUser[4]
-        }
+		}
+		
 		$.ajax({
 			type: 'PUT',
 			url: 'http://localhost:8080/admin/users/update/',
