@@ -46,7 +46,7 @@ function generateUnpaidBillsForm(unpaidBills) {
        "                     <tbody>"+ billsFragment + "</tbody>"+
 
        "                 </table>"+
-       "                 <button type='submit' class='button' id='pay-btn'>Pay</button>"+
+       "                 <button type='submit' class='button' id='pay-btn'>Pay</button></br>"+
        "             </div>"+
        "         </div>"+
        "     </div>"+
